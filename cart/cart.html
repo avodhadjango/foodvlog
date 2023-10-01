@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="{% static fontawesome/css/all.min.css %}" rel="stylesheet" />
+    <link href="{% static css/templatemo-comparto.css %}" rel="stylesheet" />
+    <title>Shopping cart</title>
+
+
+
+
+</head>
+
+<body>
+    <div class="shopping-cart">
+        <!-- Title -->
+        <div class="title">
+            Shopping Bag
+            </div>
+    </div>
+    {% for i in ci %}
+
+
+          <!--product #1 -->
+
+         <div class="item">
+             <div class="buttons">
+                 <span><i class="fa fa-trash"></i></span>
+             </div>
+         </div>
+
+         <div class="image">
+         <a href="{{i.prodt.get_url}}"><img src="{{i.prodt.img_url}}" alt="{{i.prodt.name}}" style="height:70; width:100;" /></a>
+         </div>
+         <div class="description">
+             <span>{{i.prodt.name}}</span>
+             <span>ID: {{i.prodt.id}}</span>
+             <span>price: {{i.prodt.price}}</span>
+         </div>
+
+
+         <div class="quantity">
+             <button class="plus-btn" type="button"  name="button">
+                 <img src="{% static cr/plus.svg %}" alt="" />
+             </button>
+             <input type="text" name="name" value="1">
+             <button class="minus-btn" type="button" name="button">
+                 <img src="{% static cr/minus.svg %}" alt="" />
+             </button>
+         </div>
+
+         <div class="total-price">$549</div>
+      {% endfor %}
+
+
+          <!-- product  #2 -->
+</body>
+<html>
+{% endblock %}
+
